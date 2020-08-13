@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon /Users/kirby/Fullstack/wikistack/app.js"
+    "start": "nodemon /Users/adamking/Documents/Fullstack/Immersive-Program/Wikistack/app.js"
   },
   "author": "",
   "license": "ISC",

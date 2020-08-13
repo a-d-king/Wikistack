@@ -1,18 +1,20 @@
 const express = require('express')
 const {addPage} = require ('../views')
-
+const {Page} = require('../models')
 const router = express.Router()
-
 
 router.get('/', (req, res, next) => {
     res.send("got to GET /wiki/")
 });
 
-
-router.post('/', (req, res, next) => {
-  console.log(res.json(req.body))
-
-  res.send(res.json(req.body))
+router.post('/',  async (req, res, next) => {
+  try {
+    const page = await Page.create({
+      title: req.body.title,
+      content: req.body.content
+    })
+    res.redirect('/')
+  } catch (error) { next(error) }
 });
 
 

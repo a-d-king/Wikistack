@@ -6,10 +6,11 @@ const users = require('./router/user.js')
 const app = express()
 
 app.use(express.static(__dirname + '/public'))
-app.use('/wiki', wiki);
 app.use(morgan('dev'))
 app.use(express.urlencoded({ extended: false }))
+app.use(express.json())
 
+app.use('/wiki', wiki);
 
 app.get('/', (req, res , next) => {
   res.redirect("/wiki")
